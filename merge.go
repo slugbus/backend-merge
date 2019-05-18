@@ -1,14 +1,18 @@
 package merge
 
+import (
+	"github.com/slugbus/taps"
+)
+
 // This function merges a new ping response with the current
 // response
-func mergeWithState(newPing BusMap, time float64, currentBusMap UpdatedBusMap) UpdatedBusMap {
+func mergeWithState(newPing taps.BusMap, time float64, currentBusMap taps.UpdatedBusMap) taps.UpdatedBusMap {
 	// Prepare the new state.
-	newUpdatedBusMap := UpdatedBusMap{}
+	newUpdatedBusMap := taps.UpdatedBusMap{}
 
 	for key, pingBus := range newPing {
 		// Prepare a new UpdatedBus struct for each bus in the new ping
-		newUpdatedBus := UpdatedBus{
+		newUpdatedBus := taps.UpdatedBus{
 			Bus: pingBus,
 		}
 		// Check to see if the bus we're looking
