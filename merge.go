@@ -1,6 +1,7 @@
 package merge
 
 import (
+	measusurements "github.com/slugbus/backend-measurements"
 	"github.com/slugbus/taps"
 )
 
@@ -21,20 +22,12 @@ func mergeWithState(newPing taps.BusMap, time float64, currentBusMap taps.Update
 		//isBusStillRunning = currentBusMap[key] // is the key in the existing UpdatedBusMap
 		if _, exists := currentBusMap[key]; exists {
 			//testing
-			newUpdatedBus.Speed = 100.0
-			newUpdatedBus.Angle = 3000.0
-
-			//distance := geo.Dist(stateBus.Lat, stateBus.Lon, pingBus.Lat, pingBus.Lon)
-			//newUpdatedBus.Speed = geo.Speed(distance, t)
-			//newUpdated.Angle = geo.Dir(stateBus.Lat, stateBus.Lon, pingBus.Lat, pingBus.Lon)
+			//newUpdatedBus.Speed = 100.0
+			//newUpdatedBus.Angle = 3000.0
+			//distance := measusurements.getDistance(currentBusMap[key].Lat, currentBusMap[key].Lon, newUpdatedBus.Lat, newUpdatedBus.Lon)
+			//newUpdatedBus.Speed = measusurements.Speed(distance, time)
+			newUpdatedBus.Angle = measusurements.Direction(currentBusMap[key].Lat, currentBusMap[key].Lon, pingBus.Lat, pingBus.Lon)
 		}
-
-		/*if stateBus, isInState := currentBusMap[key]; isInState {
-
-			//distance := geo.Dist(stateBus.Lat, stateBus.Lon, pingBus.Lat, pingBus.Lon)
-			//dataPoint.Speed = geo.Speed(distance, t)
-			//dataPoint.Angle = geo.Dir(stateBus.Lat, stateBus.Lon, pingBus.Lat, pingBus.Lon)
-		} */
 
 		// Always push the new bus into the new updated bus map
 		newUpdatedBusMap[key] = newUpdatedBus
