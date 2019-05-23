@@ -12,11 +12,11 @@ func TestMergeWithState(*testing.T) {
 
 	// Bus structs: Before will be in the current UpdatedBus map and after will be the new bus ping
 	testBus1Before := taps.Bus{ID: "Bus One", Lat: 60.0, Lon: 60.0, Type: "type"}
-	testBus2Before := taps.Bus{ID: "Bus two", Lat: 80.0, Lon: 80.0, Type: "type"}
-	testBus3Before := taps.Bus{ID: "Bus three", Lat: 90.0, Lon: 90.0, Type: "type"}
+	testBus2Before := taps.Bus{ID: "Bus two", Lat: 122.0, Lon: 122.0, Type: "type"}
+	testBus3Before := taps.Bus{ID: "Bus three", Lat: 200.0, Lon: 200.0, Type: "type"}
 
-	testBus2After := taps.Bus{ID: "Bus two", Lat: 160.0, Lon: 160.0, Type: "type"}
-	testBus3After := taps.Bus{ID: "Bus three", Lat: 180.0, Lon: 180.0, Type: "type"}
+	testBus2After := taps.Bus{ID: "Bus two", Lat: 71.0, Lon: 71.0, Type: "type"}
+	testBus3After := taps.Bus{ID: "Bus three", Lat: 125.0, Lon: 132.0, Type: "type"}
 	testBus4After := taps.Bus{ID: "Bus four", Lat: 200.0, Lon: 200.0, Type: "type"}
 
 	// UpdatedBus structs
