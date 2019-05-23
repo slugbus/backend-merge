@@ -7,7 +7,7 @@ import (
 
 // This function merges a new ping response with the current
 // response
-func mergeWithStacdte(newPing taps.BusMap, time float64, currentBusMap taps.UpdatedBusMap) taps.UpdatedBusMap {
+func mergeWithState(newPing taps.BusMap, time float64, currentBusMap taps.UpdatedBusMap) taps.UpdatedBusMap {
 	// Prepare the new state.
 	newUpdatedBusMap := taps.UpdatedBusMap{}
 
