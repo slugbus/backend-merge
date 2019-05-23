@@ -1,0 +1,6 @@
+github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=
+github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/slugbus/backend-measurements v0.0.0-20190518232734-78fb7737d8db h1:MrZc8H+Kr4ClV5aU8/v9pZshK1eepdIZuYNAgzAA6MU=
+github.com/slugbus/backend-measurements v0.0.0-20190518232734-78fb7737d8db/go.mod h1:1bpM/sB19C/vIDuhgjCZnvU6NpkfldSvs/9Ycps/NZM=
+github.com/slugbus/taps v1.0.0 h1:8Jd2fkyrDxBbbCbLPmZrwBz3b8YA4sQNobPWHFZMBTw=
+github.com/slugbus/taps v1.0.0/go.mod h1:m11FFXzS4zyl595pG/QT80KRJBqLGvYVxEsYJOJrbVA=
