@@ -1,7 +1,7 @@
 package merge
 
 import (
-	measusurements "github.com/slugbus/backend-measurements"
+	measurements "github.com/slugbus/backend-measurements"
 	"github.com/slugbus/taps"
 )
 
@@ -26,7 +26,9 @@ func mergeWithState(newPing taps.BusMap, time float64, currentBusMap taps.Update
 			//newUpdatedBus.Angle = 3000.0
 			//distance := measusurements.getDistance(currentBusMap[key].Lat, currentBusMap[key].Lon, newUpdatedBus.Lat, newUpdatedBus.Lon)
 			//newUpdatedBus.Speed = measusurements.Speed(distance, time)
-			newUpdatedBus.Angle = measusurements.Direction(currentBusMap[key].Lat, currentBusMap[key].Lon, pingBus.Lat, pingBus.Lon)
+			newUpdatedBus.Angle = measurements.Angle(currentBusMap[key].Lat, currentBusMap[key].Lon, pingBus.Lat, pingBus.Lon)
+		} else {
+			newUpdatedBus.Angle = 30.0
 		}
 
 		// Always push the new bus into the new updated bus map
