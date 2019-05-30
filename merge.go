@@ -1,8 +1,6 @@
 package merge
 
 import (
-	"fmt"
-
 	measurements "github.com/slugbus/backend-measurements"
 	"github.com/slugbus/taps"
 )
@@ -23,13 +21,8 @@ func mergeWithState(newPing taps.BusMap, time float64, currentBusMap taps.Update
 		// update it with speed and angle value
 		//isBusStillRunning = currentBusMap[key] // is the key in the existing UpdatedBusMap
 		if _, exists := currentBusMap[key]; exists {
-			//testing
-			//newUpdatedBus.Speed = 100.0
-			//newUpdatedBus.Angle = 3000.0
-			//distance := measusurements.getDistance(currentBusMap[key].Lat, currentBusMap[key].Lon, newUpdatedBus.Lat, newUpdatedBus.Lon)
-			//newUpdatedBus.Speed = measusurements.Speed(distance, time)
-			fmt.Printf("CurrentBusMap bus Lat: %f   Lon: %f\n", currentBusMap[key].Lat, currentBusMap[key].Lon)
-			fmt.Printf("Ping bus Lat: %f   Lon: %f\n", pingBus.Lat, pingBus.Lon)
+			distance := measurements.GetDistance(currentBusMap[key].Lat, currentBusMap[key].Lon, newUpdatedBus.Lat, newUpdatedBus.Lon)
+			newUpdatedBus.Speed = measurements.Speed(distance, time)
 			newUpdatedBus.Angle = measurements.Angle(currentBusMap[key].Lat, currentBusMap[key].Lon, pingBus.Lat, pingBus.Lon)
 		} else {
 			newUpdatedBus.Angle = 30.0
